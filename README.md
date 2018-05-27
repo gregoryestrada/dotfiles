@@ -2,6 +2,8 @@
 
 My Ubuntu dotfiles.
 
+WARNING: do not trust this repo as it will break you. This is my playground until I git it to work for me.
+
 ## About this project
 
 That command is [dotfiles][dotfiles], and this is my "dotfiles" Git repo.
