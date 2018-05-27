@@ -99,7 +99,7 @@ function other_stuff() {
   fi
   # Install misc bins from zip file.
   install_from_zip ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip'
-
+}
 ####################
 # ACTUALLY DO THINGS
 ####################
