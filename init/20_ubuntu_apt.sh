@@ -50,37 +50,11 @@ apt_packages+=(
 apt_packages+=(vim)
 is_ubuntu_desktop && apt_packages+=(vim-gnome)
 
-# https://github.com/neovim/neovim/wiki/Installing-Neovim
-add_ppa ppa:neovim-ppa/stable
-apt_packages+=(neovim)
-
-# https://launchpad.net/~stebbins/+archive/ubuntu/handbrake-releases
-add_ppa ppa:stebbins/handbrake-releases
-apt_packages+=(handbrake-cli)
-is_ubuntu_desktop && apt_packages+=(handbrake-gtk)
-
-# https://github.com/greymd/tmux-xpanes
-add_ppa ppa:greymd/tmux-xpanes
-apt_packages+=(tmux-xpanes)
-
 if is_ubuntu_desktop; then
-  # https://be5invis.github.io/Iosevka/
-  # https://launchpad.net/~laurent-boulard/+archive/ubuntu/fonts
-  add_ppa ppa:laurent-boulard/fonts
-  apt_packages+=(fonts-iosevka)
 
   # https://support.gitkraken.com/how-to-install
   deb_installed+=(/usr/bin/gitkraken)
   deb_sources+=(https://release.gitkraken.com/linux/gitkraken-amd64.deb)
-
-  # http://askubuntu.com/a/852727
-  apt_packages+=(cabextract)
-  deb_installed+=(/usr/share/fonts/truetype/msttcorefonts)
-  deb_sources+=(deb_source_msttcorefonts)
-  function deb_source_msttcorefonts() {
-    echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-    echo http://ftp.debian.org/debian/pool/contrib/m/msttcorefonts/ttf-mscorefonts-installer_3.6_all.deb
-  }
 
   # https://discordapp.com/download
   deb_installed+=(/usr/bin/discord)
