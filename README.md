@@ -14,7 +14,7 @@ That command is [dotfiles][dotfiles], and this is my "dotfiles" Git repo.
 
 When [dotfiles][dotfiles] is run for the first time, it does a few things:
 
-1. In Ubuntu, Git is installed if necessary via APT (it's already there in OSX).
+1. In Ubuntu, Git is installed if necessary via APT.
 1. This repo is cloned into your user directory, under `~/.dotfiles`.
 1. Files in `/copy` are copied into `~/`. ([read more](#the-copy-step))
 1. Files in `/link` are symlinked into `~/`. ([read more](#the-link-step))
@@ -54,23 +54,21 @@ Scripts in the `/init` subdirectory will be executed. A whole bunch of things wi
 
 ### Ubuntu Notes
 
-You might want to set up your ubuntu server [like I do it](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup), but then again, you might not.
+You might want to set up your ubuntu server [like Cowboy does it](https://github.com/cowboy/dotfiles/wiki/ubuntu-setup), but then again as he says, you might not.
 
 Either way, you should at least update/upgrade APT with `sudo apt-get -qq update && sudo apt-get -qq dist-upgrade` first.
 
-_Tested in Ubuntu 14.04 LTS_
+_Tested in Ubuntu 18.04 LTS_
 
 ### Heed this critically important warning before you install
 
-**If you're not me, please _do not_ install dotfiles directly from this repo!**
-
-Why? Because I often completely break this repo while updating. Which means that if I do that and you run the `dotfiles` command, your home directory will burst into flames, and you'll have to go buy a new computer. No, not really, but it will be very messy.
+This is my playground. Don't install this until I am done or there will be pain...lots of pain.
 
 ### Actual installation (for you)
 
 1. [Read my gently-worded note](#heed-this-critically-important-warning-before-you-install)
 1. Fork this repo
-1. Open a terminal/shell and do this (change `cowboy` and `master` as appropriate):
+1. Open a terminal/shell and do this (change `gregoryestrada` and `master` as appropriate):
 
 #### Ubuntu
 
@@ -118,6 +116,8 @@ SVN repos display as **[rev1:rev2]** where rev1 and rev2 are:
 
 
 ## Inspiration
+A special thanks to Cowboy.
+
 <https://github.com/gf3/dotfiles>  
 <https://github.com/mathiasbynens/dotfiles>  
 (and 15+ years of accumulated crap)
