@@ -27,22 +27,12 @@ function add_ppa() {
 apt_packages+=(
   build-essential
   cmatrix
-  cowsay
-  curl
-  docker.io
-  docker-compose
   git-core
   groff
   hollywood
   htop
-  id3tool
-  imagemagick
-  jq
   nmap
   python-pip
-  silversearcher-ag
-  sl
-  telnet
   thefuck
   tree
 )
@@ -52,13 +42,13 @@ is_ubuntu_desktop && apt_packages+=(vim-gnome)
 
 if is_ubuntu_desktop; then
 
-  # https://support.gitkraken.com/how-to-install
-  deb_installed+=(/usr/bin/gitkraken)
-  deb_sources+=(https://release.gitkraken.com/linux/gitkraken-amd64.deb)
+#  # https://support.gitkraken.com/how-to-install
+#  deb_installed+=(/usr/bin/gitkraken)
+#  deb_sources+=(https://release.gitkraken.com/linux/gitkraken-amd64.deb)
 
-  # https://discordapp.com/download
-  deb_installed+=(/usr/bin/discord)
-  deb_sources+=("https://discordapp.com/api/download?platform=linux&format=deb")
+#  # https://discordapp.com/download
+#  deb_installed+=(/usr/bin/discord)
+#  deb_sources+=("https://discordapp.com/api/download?platform=linux&format=deb")
 
 fi
 
@@ -71,8 +61,6 @@ function other_stuff() {
       sudo make install
     )
   fi
-  # Install misc bins from zip file.
-  install_from_zip ngrok 'https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip'
 }
 ####################
 # ACTUALLY DO THINGS
