@@ -26,19 +26,23 @@ function add_ppa() {
 # Misc.
 apt_packages+=(
   build-essential
-  cmatrix
   git-core
   groff
-  hollywood
   htop
   nmap
   python-pip
-  thefuck
   tree
 )
 
 apt_packages+=(vim)
 is_ubuntu_desktop && apt_packages+=(vim-gnome)
+
+# https://docs.docker.com/install/linux/docker-ce/ubuntu/
+apt_packages+=(apt-transport-https ca-certificates curl software-properties-common)
+apt_keys+=(https://download.docker.com/linux/ubuntu/gpg)
+apt_source_files+=(docker)
+apt_source_texts+=("deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic edge")
+apt_packages+=(docker-ce)
 
 if is_ubuntu_desktop; then
 
