@@ -44,17 +44,6 @@ apt_source_files+=(docker)
 apt_source_texts+=("deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic edge")
 apt_packages+=(docker-ce)
 
-if is_ubuntu_desktop; then
-
-  # https://support.gitkraken.com/how-to-install
-  deb_installed+=(/usr/bin/gitkraken)
-  deb_sources+=(https://release.gitkraken.com/linux/gitkraken-amd64.deb)
-
-#  # https://discordapp.com/download
-#  deb_installed+=(/usr/bin/discord)
-#  deb_sources+=("https://discordapp.com/api/download?platform=linux&format=deb")
-
-fi
 
 function other_stuff() {
   # Install Git Extras
