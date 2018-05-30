@@ -1,17 +1,30 @@
 [[ ! "$(type -P docker)" ]] && e_error "Docker needs to be installed." && return 1
 
+e_header "Docker Mods"
+
+e_success $(docker --version)
+
 # docker user sans sudo
-sudo groupadd docker
 sudo usermod -aG docker $USER
+if id -nG "$USER" | grep -qw "docker"; then
+    e_success "User added to docker group"
+else
+    e_error "User could not be added to docker group"
+fi
 
 # docker on boot
 sudo systemctl enable docker
+if (systemctl is-active docker) == "active"; then
+    e_success "Docker is running"
+else
+    e_error "Docker is not running"
 
+e_header "docker-machine"
 # install docker-machine
 base=https://github.com/docker/machine/releases/download/v0.14.0 &&
   curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
   sudo install /tmp/docker-machine /usr/local/bin/docker-machine
-docker-machine version
+e_success $(docker-machine version)
 
 #bash completion
 base=https://raw.githubusercontent.com/docker/machine/v0.14.0
